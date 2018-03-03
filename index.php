@@ -1,10 +1,10 @@
 <?php
 
-    $backgroundImage = "image/sea.jpg";
+    $backgroundImage = "img/sea.jpg";
 
     if(isset($_GET['keyword'])) {
         include 'api/pixabayAPI.php';
-        $imageURLs = getImageURLS($_GET['keyword']);
+        $imageURLs = getImageURLs($_GET['keyword']);
         $backgroundImage = $imageURLs[array_rand($imageURLs)];
     }
 ?>
@@ -13,7 +13,6 @@
 <html>
     <head>
         <title>Image Carousel</title>
-        <meta charset="utf-8">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" href="" type="text/css" />
         
         <style>
@@ -36,7 +35,7 @@
                     echo "<img src= '" . $imgURLs[rand(0,count($imageURLs))] . "' width = '200' />";
                     
                 }
-            }
+            
         
         ?>
         
@@ -47,13 +46,13 @@
               <?php
                   for($i=0; $i<5; $i++){
                       echo "<li data-target='#carousel-example-generic' data-slide-to='$i'";
-                      echo ($i == 0)? "class='active'": "";
+                      echo ($i == 0) ? " class='active'": "";
                       echo "></li>";
                   }
               ?>
             </ol>
             
-            <div class="carousel-inner" role="listbox">
+            <div class=carousel-inner role="listbox">
                 
                 <?php
                     for ($i=0; $i<5; $i++){
@@ -68,9 +67,11 @@
                         echo '<img src="' . $imageURLs[$randomIndex] . '">';
                         echo '</div>';
                         unset($imageURLs[$randomIndex]);
+                        
                     }
                 ?>
-            </div>
+                </div>
+            
             <!-- Controls -->
               <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -83,7 +84,7 @@
         </div>
         
         <?php
-        
+            }
         ?>
         
         <form>
@@ -93,6 +94,6 @@
         <!-- HTML form goes here! -->
         <br/><br/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
     </body>
 </html>
