@@ -31,7 +31,7 @@
                 echo "<h2> Type a keyword to display a slideshow <br /> with a random image from Pixabay.com </h2>";
             } else {
                 // Display Carousel Here
-                for($i=0; $i<5; $i++){
+                for($i=0; $i<7; $i++){
                     echo "<img src= '" . $imgURLs[rand(0,count($imageURLs))] . "' width = '200' />";
                     
                 }
@@ -44,7 +44,7 @@
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <?php
-                  for($i=0; $i<5; $i++){
+                  for($i=0; $i<7; $i++){
                       echo "<li data-target='#carousel-example-generic' data-slide-to='$i'";
                       echo ($i == 0) ? " class='active'": "";
                       echo "></li>";
@@ -55,7 +55,7 @@
             <div class=carousel-inner role="listbox">
                 
                 <?php
-                    for ($i=0; $i<5; $i++){
+                    for ($i=0; $i<7; $i++){
                         do {
                             $randomIndex = rand(0,count($imageURLs));
                         }
