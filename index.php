@@ -1,11 +1,11 @@
 <?php
+
+    $backgroundImage = "image/sea.jpg";
+
     if(isset($_GET['keyword'])) {
         include 'api/pixabayAPI.php';
         $imageURLs = getImageURLS($_GET['keyword']);
         $backgroundImage = $imageURLs[array_rand($imageURLs)];
-    }
-    else{
-        $backgroundImage = "img/sea.jpg";
     }
 ?>
 
@@ -47,7 +47,7 @@
               <?php
                   for($i=0; $i<5; $i++){
                       echo "<li data-target='#carousel-example-generic' data-slide-to='$i'";
-                      echo ($i == 0)?" class='active'": "";
+                      echo ($i == 0)? "class='active'": "";
                       echo "></li>";
                   }
               ?>
@@ -87,12 +87,12 @@
         ?>
         
         <form>
-            <input type="text" name="keyword" plac eholder = "Keyword" method="post"/>
+            <input type="text" name="keyword" placeholder = "Keyword" method="post"/>
             <input type="Submit" value="Submit"/>
         </form>
         <!-- HTML form goes here! -->
         <br/><br/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>    
     </body>
 </html>
