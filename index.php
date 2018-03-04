@@ -52,7 +52,7 @@
               ?>
             </ol>
             
-            <div class=carousel-inner role="listbox">
+            <div class="carousel-inner" role="listbox">
                 
                 <?php
                     for ($i=0; $i<7; $i++){
@@ -88,7 +88,18 @@
         ?>
         
         <form>
-            <input type="text" name="keyword" placeholder = "Keyword" method="post"/>
+            <input type="text" name="keyword" placeholder = "Keyword" value="<?=$_GET['keyword']?>"/>
+            <input type="radio" id="lhorizontal" name="layout" value="horizontal">
+            <label for="Horizontal"></label><label for="lhorizontal">Horizontal</label>
+            <input type="radio" id="lvertical" name="layout" value="vertical">
+            <label for="Vertical"></label><label for="lvertical">Vertical</label>
+            <select name="category">
+                <option value="">Select One</option>
+                <option value="ocean">Sea</option>
+                <option>Forest</option>
+                <option>Mountain</option>
+                <option>Snow</option>
+            </select>
             <input type="Submit" value="Submit"/>
         </form>
         <!-- HTML form goes here! -->
